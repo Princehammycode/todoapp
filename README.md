@@ -3,23 +3,8 @@
 A RESTful API for managing tasks with user authentication using Flask and JWT tokens.
 
 ## Project Structure
-todo-app/
-│
-├── api/
-│ ├── app.py                    # Main application file
-│ └── models.py                 # Database models
-| └── extensions.py             # Centralizes Flask extension initialization (database, authentication, encryption) 
-| └── generate_token.py         # Generate JWT tokens
-| └── run.py                    # Run the models to create the database
-├── static/
-│ ├── styles.css                # CSS styling
-│ └── script.js                 # Frontend JavaScript
-├── templates/ 
-│ └── index.html                # Main page template
-└── README.md                   # Documentation
-| └── requirements.txt          # Requirements for the project
 
-
+![Project Structure](projectstructure.png)
 
 ## Technical Implementation Details
 
@@ -79,7 +64,6 @@ The application uses JWT (JSON Web Tokens) for authentication:
    - Passwords hashed using Bcrypt
    - JWTs expire after 1 hour
    - Protected routes require valid JWT
-   - CORS protection enabled
    - SQL injection prevention via SQLAlchemy
 
 
@@ -193,14 +177,14 @@ export JWT_SECRET_KEY='generated_token'
 ```
 
 8. Change the database credentials in the app.py file to your own database credentials.
-    ```bash
-   app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:port/dbname' ##If db has no password
-   app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:your_password@localhost:port/dbname' ##If db has password
-   ```
-   using the .env file variables
-   ```bash
-   app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
-   ```
+```bash
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:port/dbname' ##If db has no password
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:your_password@localhost:port/dbname' ##If db has password
+```
+using the .env file variables
+```bash
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+```
 
 9. Configure environment variables:
 - In the .env file, set the JWT_SECRET_KEY to the generated token.
