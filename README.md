@@ -135,7 +135,7 @@ curl -X POST http://127.0.0.1:5001/tasks \
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Princehammycode/todoapp.git
 cd todo_app
 ```
 
