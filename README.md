@@ -136,7 +136,7 @@ curl -X POST http://127.0.0.1:5001/tasks \
 
 ```bash
 git clone https://github.com/Princehammycode/todoapp.git
-cd todo_app
+cd todoapp
 ```
 
 2. Create and activate virtual environment:
