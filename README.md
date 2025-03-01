@@ -115,7 +115,7 @@ curl -X POST http://127.0.0.1:5001/auth/login \
 curl -X POST http://127.0.0.1:5001/tasks \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer <token>" \
--d '{"title": "New Task", "description": "This is a new task"}'
+-d '{"title": "Buy groceries", "description": "Milk, Bread, Eggs"}'
 ```
 
 **Output**
@@ -152,7 +152,7 @@ pip install -r requirements.txt
 
 4. Generate JWT token:
 ```bash
-python generate_token.py
+python generate_key.py
 ```
 
 5. Create database:
